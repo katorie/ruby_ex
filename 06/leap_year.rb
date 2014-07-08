@@ -11,16 +11,17 @@ start_year = gets.chomp.to_i
 puts "終わりの年は？"
 end_year = gets.chomp.to_i
 
-while end_year > start_year
+while end_year + 1 > start_year
   if start_year % 400 == 0
     puts "#{start_year}はうるう年です。"
-    start_year += 1
   elsif start_year % 100 == 0
-    start_year += 1
   elsif start_year % 4 == 0
     puts "#{start_year}はうるう年です。"
-    start_year += 1
   else
-    start_year += 1
   end
+  start_year += 1
 end
+
+# start_yearがインクリメントしているのが微妙。
+# @aikyo さんのプログラムを参考にする。
+# https://github.com/aikyo02/ruby_exercise/blob/master/chapter6/exercise4.rb
